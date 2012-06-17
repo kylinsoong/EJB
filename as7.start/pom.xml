@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.cedarsoft</groupId>
+    <artifactId>open</artifactId>
+    <version>4.0.2</version>
+  </parent>
+
+  <groupId>as7.start</groupId>
+  <artifactId>as7.start</artifactId>
+  <version>1.0</version>
+
+  <scm>
+    <connection>scm:git:git://git.cedarsoft.com/as7.start.as7.start</connection>
+    <developerConnection>scm:git:ssh://git.cedarsoft.com/home/git/as7.start.as7.start</developerConnection>
+  </scm>
+
+  <dependencies>
+    <dependency>
+	<groupId>org.jboss.logging</groupId>
+	<artifactId>jboss-logging</artifactId>
+	<version>3.0.0.CR1</version>
+	<scope>provided</scope>
+    </dependency>
+
+    <!--Test Dependencies-->
+    <dependency>
+      <groupId>com.cedarsoft.commons</groupId>
+      <artifactId>test-utils</artifactId>
+      <version>3.0.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+
+  <mailingLists>
+    <mailingList>
+      <name>Mail Support</name>
+      <post>info@cedarsoft.com</post>
+    </mailingList>
+  </mailingLists>
+
+</project>
