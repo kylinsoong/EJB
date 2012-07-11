@@ -1,0 +1,30 @@
+ejb-in-war: Deployment of a WAR Containing an EJB
+=================================================
+
+
+What is it?
+-----------
+
+This example demonstrates the deployment of an *EJB 3.1* bean bundled in a war archive for deployment to *JBoss Enterprise Application Platform 6* or *JBoss AS 7*. The project also includes a set of Aquillian tests for the managed bean and EJB.
+
+The example follows the common "Hello World" pattern. These are the steps that occur:
+
+1. A JSF page asks the user for their name.
+
+2. On clicking submit, the name is sent to a managed bean namde `Greeter`.
+
+3. On setting the name, the `Greeter` invokes the `GreeterEJB`, which was injected into the managed bean. Notice the field annotated with `@EJB`.
+
+4. The response from invoking the `GreeterEJB` is stored in a field `message` of the managed bean.
+
+5. The managed bean is annotated as `@SessionScoped`, so the same managed bean instance is used for the entire session. This ensures that the message is available when the page reloads and is displayed to the user.
+
+System requirements
+-------------------
+
+* Java 6.0 (Java SDK 1.6) or latter 
+* Maven 3.0 or latter.
+* JBoss-eap-6.0 & JBoss-as-7.x
+
+
+
