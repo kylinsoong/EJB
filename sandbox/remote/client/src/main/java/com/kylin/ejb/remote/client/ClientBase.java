@@ -9,9 +9,8 @@ import javax.naming.NamingException;
 public abstract class ClientBase {
 
 	protected Context getContext() throws NamingException {
-		Hashtable jndiProperties = new Hashtable();
-		jndiProperties.put(Context.URL_PKG_PREFIXES,
-				"org.jboss.ejb.client.naming");
+		Hashtable<String, String> jndiProperties = new Hashtable<String, String>();
+		jndiProperties.put(Context.URL_PKG_PREFIXES,"org.jboss.ejb.client.naming");
 		Context context = new InitialContext(jndiProperties);
 
 		return context;
