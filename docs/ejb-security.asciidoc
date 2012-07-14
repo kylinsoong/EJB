@@ -1,0 +1,75 @@
+ejb-security:  Using Java EE Declarative Security to Control Access to EJB 3
+====================
+
+
+What is it?
+-----------
+
+This example demonstrates the use of Java EE declarative security to control access to EJB3 and Security in *JBoss Enterprise Application Platform 6* or *JBoss AS 7*.
+
+This demo takes the following steps to implement EJB security:
+
+1. Define a security domain in the `standalone.xml` configuration file.
+2. Add an application user with access rights to the application.
+3. Add a security domain reference to `WEB-INF/jboss-web.xml`.
+4. Add a security constraint to the `WEB-INF/web.xml` .
+5. Add a security annotation to the EJB declaration.
+
+When you review the code, note the allowed user role `guest` in the annotation -`@RolesAllowed`- is the same as the user role defined in step 2 above.
+
+System requirements
+-------------------
+
+* Java 6.0 (Java SDK 1.6) or latter
+
+* Maven 3.0 or latter.
+
+* JBoss-eap-6.0 & JBoss-as-7.x
+
+
+
+Add an Application User
+---------------
+
+This quickstart uses a secured management interface and requires that you create an application user to access the running application. Instructions to set up an Application user can be found here:  [Add an Application User](../README.md#addapplicationuser)
+
+
+Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
+-------------------------
+
+1. Open a command line and navigate to the root of the JBoss server directory.
+2. The following shows the command line to start the server with the web profile:
+
+        For Linux:   JBOSS_HOME/bin/standalone.sh
+        For Windows: JBOSS_HOME\bin\standalone.bat
+
+
+
+Access the application 
+---------------------
+
+The application will be running at the following URL <http://localhost:8080/jboss-as-ejb-security/>.
+
+When you access the application, you should get a browser login challenge.
+
+After a successful login using `quickstartUser`/`quickstartPassword`, the browser will display the following security info:
+
+    Successfully called Secured EJB
+
+    Principal : quickstartUser
+    Remote User : quickstartUser
+    Authentication Type : BASIC
+
+You can now change the role in the quickstart `/src/main/webapp/WEB-INF/classes/roles.properties` files to `notauthorized`. 
+
+Rebuild and redeploy the quickstart following the instructions under **Build and Deploy the Archive** above.
+
+Refresh the browser, clear the active login, and you should get a security exception similar to the following: 
+
+    HTTP Status 403 - Access to the requested resource has been denied
+
+    type Status report
+    message Access to the requested resource has been denied
+    description Access to the specified resource (Access to the requested resource has been denied) has been forbidden.
+
+

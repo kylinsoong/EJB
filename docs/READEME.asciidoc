@@ -7,6 +7,8 @@ link:ejb-in-war.asciidoc[EJB war test demo entry]
 
 link:ejb-in-ear.asciidoc[EJB ear test demo entry]
 
+link:ejb-security.asciidoc[EJB security demo entry]
+
 
 
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
