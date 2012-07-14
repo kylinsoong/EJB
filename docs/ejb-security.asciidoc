@@ -17,6 +17,7 @@ This demo takes the following steps to implement EJB security:
 
 When you review the code, note the allowed user role `guest` in the annotation -`@RolesAllowed`- is the same as the user role defined in step 2 above.
 
+
 System requirements
 -------------------
 
@@ -29,40 +30,30 @@ System requirements
 
 
 Add an Application User
----------------
+-----------------------
 
-This quickstart uses a secured management interface and requires that you create an application user to access the running application. Instructions to set up an Application user can be found here:  [Add an Application User](../README.md#addapplicationuser)
-
-
-Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
--------------------------
-
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server with the web profile:
-
-        For Linux:   JBOSS_HOME/bin/standalone.sh
-        For Windows: JBOSS_HOME\bin\standalone.bat
+This demo uses a secured management interface and requires that you create an application user to access the running application. Instructions to set up an Application user can be found here:  [Add an Application User](../README.md#addapplicationuser)
 
 
 
 Access the application 
----------------------
+----------------------
 
-The application will be running at the following URL <http://localhost:8080/jboss-as-ejb-security/>.
+The application will be running at the following URL <http://localhost:8080/securityTest/>.
 
 When you access the application, you should get a browser login challenge.
 
-After a successful login using `quickstartUser`/`quickstartPassword`, the browser will display the following security info:
+After a successful login using `kylin`/`redhat`, the browser will display the following security info:
 
     Successfully called Secured EJB
 
-    Principal : quickstartUser
-    Remote User : quickstartUser
+    Principal : kylin
+    Remote User : kylin
     Authentication Type : BASIC
 
-You can now change the role in the quickstart `/src/main/webapp/WEB-INF/classes/roles.properties` files to `notauthorized`. 
+You can now change the role in the demo `/src/main/webapp/WEB-INF/classes/roles.properties` files to `notauthorized`. 
 
-Rebuild and redeploy the quickstart following the instructions under **Build and Deploy the Archive** above.
+Rebuild and redeploy the demo following the instructions under **Build and Deploy the Archive** above.
 
 Refresh the browser, clear the active login, and you should get a security exception similar to the following: 
 
