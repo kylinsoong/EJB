@@ -1,7 +1,3 @@
-ejb-security:  Using Java EE Declarative Security to Control Access to EJB 3
-====================
-
-
 What is it?
 -----------
 
