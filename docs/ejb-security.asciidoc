@@ -24,39 +24,46 @@ System requirements
 * JBoss-eap-6.0 & JBoss-as-7.x
 
 
+Security Test:
+--------------
 
-Add an Application User
------------------------
+1. Access the application use authorized `user/role` 
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This demo uses a secured management interface and requires that you create an application user to access the running application. Instructions to set up an Application user can be found here:  [Add an Application User](../README.md#addapplicationuser)
+* The application will be running at the following URL <http://localhost:8080/securityTest/>.
+
+* When you access the application, you should get a browser login challenge.
+
+* After a successful login using `kylin`/`redhat` which create in add application user, the browser will display the following security info:
+----
+Successfully called Secured EJB 
+
+Principal : kylin
+
+Remote User : kylin
+
+Authentication Type : BASIC
+----
+
+2. Access the application use unauthorized `user/role`
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Change code, modify annotation `@RolesAllowed` value from `guest` to `guest1`, note guest is exist role we create in add application user.
+----
+@RolesAllowed({ "guest1" })
+
+@ServletSecurity(@HttpConstraint(rolesAllowed="guest1"))
+----
+
+* Rebuild and redeploy and test from URL <http://localhost:8080/securityTest/>. You should get a security exception similar to the following:
+----
+HTTP Status 403 - Access to the requested resource has been denied
 
 
+type Status report
 
-Access the application 
-----------------------
+message Access to the requested resource has been denied
 
-The application will be running at the following URL <http://localhost:8080/securityTest/>.
-
-When you access the application, you should get a browser login challenge.
-
-After a successful login using `kylin`/`redhat`, the browser will display the following security info:
-
-    Successfully called Secured EJB
-
-    Principal : kylin
-    Remote User : kylin
-    Authentication Type : BASIC
-
-You can now change the role in the demo `/src/main/webapp/WEB-INF/classes/roles.properties` files to `notauthorized`. 
-
-Rebuild and redeploy the demo following the instructions under **Build and Deploy the Archive** above.
-
-Refresh the browser, clear the active login, and you should get a security exception similar to the following: 
-
-    HTTP Status 403 - Access to the requested resource has been denied
-
-    type Status report
-    message Access to the requested resource has been denied
-    description Access to the specified resource (Access to the requested resource has been denied) has been forbidden.
-
+description Access to the specified resource (Access to the requested resource has been denied) has been forbidden.
+----
 
