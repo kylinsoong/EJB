@@ -1,0 +1,34 @@
+helloworld-singleton: Helloworld Using a Singleton EJB
+======================================================
+Author: Kylin Soong
+
+
+What is it?
+-----------
+
+This dem demonstrates the use of an *EJB 3.1 Singleton Bean* in JBoss AS 7 or JBoss Enterprise Application Platform 6.
+
+
+System requirements
+-------------------
+
+* Java 6.0 (Java SDK 1.6) or latter
+
+* Maven 3.0 or latter.
+
+* JBoss-eap-6.0 & JBoss-as-7.x
+
+
+ 
+Access the application
+-----------------------
+
+The application will be running at the following URL: <http://localhost:8080/singleton>.
+
+This example demonstrates a singleton session bean that maintains state information for 2 variables: "Increment A" and "Increment B". 
+
+A counter is incremented when you click on the link to the variable name. If you close and restart your browser, or if you have multiple browsers, you can see that the counter always increments the last value. These values are maintained until you restart the server. 
+
+To test the singleton bean, click on either "Increment A" or "Increment B". The result page will give you the current value of the variable.
+
+

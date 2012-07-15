@@ -9,6 +9,8 @@ link:ejb-in-ear.asciidoc[EJB ear test demo entry]
 
 link:ejb-security.asciidoc[EJB security demo entry]
 
+link:ejb-singleton.asciidoc[EJB singleton demo entry]
+
 
 
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
