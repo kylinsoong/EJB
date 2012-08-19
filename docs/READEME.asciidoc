@@ -131,11 +131,13 @@ NOTE:  as noted above, replace `DEMO_DATABASENAME`, `sa` with the name provided 
 +++++++++++++++++++++++++++++++++++++++++++
 
 * start
+
 ----
 service postgresql start
 ----
 
 * stop
+
 ----
 service postgresql stop
 ----
