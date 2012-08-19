@@ -141,3 +141,45 @@ service postgresql start
 ----
 service postgresql stop
 ----
+
+6. Add the PostgreSQL Module to the JBoss server
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Create the following directory structure: JBOSS_HOME/modules/org/postgresql/main
+* Download the JBDC driver from http://jdbc.postgresql.org/download.html and copy it into the directory you created in the previous step.
+* In the same directory, create a file named module.xml. Copy the following contents into the file:
+----
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module xmlns="urn:jboss:module:1.0" name="org.postgresql">
+
+    <resources>
+
+        <resource-root path="postgresql-9.1-901.jdbc4.jar"/>
+
+    </resources>
+
+    <dependencies>
+
+        <module name="javax.api"/>
+
+        <module name="javax.transaction.api"/>
+
+    </dependencies>
+
+</module>
+----
+
+7. Add the Driver Configuration to the JBoss server
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Backup the file: JBOSS_HOME/standalone/configuration/standalone-full.xml
+* Open the JBOSS_HOME/standalone/configuration/standalone-full.xml file in an editor and locate the subsystem urn:jboss:domain:datasources:1.0. 
+* Add the following driver to the <drivers> section that subsystem. You may need to merge with other drivers in that section:
+----
+<driver name="postgresql" module="org.postgresql">
+    
+	<xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+
+</driver>
+----
