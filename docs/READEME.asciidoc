@@ -16,6 +16,7 @@ link:ejb-mdb.asciidoc[EJB mdb demo entry]
 link:ejb-cmt.asciidoc[EJB cmt demo entry]
 
 
+
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
 -------------------------------------------------
 * stateless session bean: *ejb:<appName>/<moduleName>/<distinctName>/<beanName>!<viewClassName>*
