@@ -126,7 +126,9 @@ grant all privileges on database "DEMO_DATABASENAME" to sa;
 
 NOTE:  as noted above, replace `DEMO_DATABASENAME`, `sa` with the name provided in the particular demo):
 
+
 5. Start & Stop PostSQL Database as service
++++++++++++++++++++++++++++++++++++++++++++
 
 * start
 ----
