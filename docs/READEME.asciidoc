@@ -15,6 +15,7 @@ link:ejb-mdb.asciidoc[EJB mdb demo entry]
 
 link:ejb-cmt.asciidoc[EJB cmt demo entry]
 
+link:ejb-bmt.asciidoc[EJB bmt demo entry]
 
 
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
