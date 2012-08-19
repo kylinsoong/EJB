@@ -19,7 +19,7 @@ With CMT, the EJB container sets the boundaries of a transaction. This differs f
 What makes this an example of container managed transactions?
 -------------------------------------------------------------
 
-Take a look at <code>com.kylin.ejb.cmt.CustomerManagerEJBImpl</code>. You can see that this stateless session bean has been marked up with the @javax.ejb.TransactionAttribute annotation.
+Take a look at <code>com.kylin.ejb.cmt.ejb.CustomerManagerEJBImpl</code>. You can see that this stateless session bean has been marked up with the @javax.ejb.TransactionAttribute annotation.
 
 The available options for this annotation are as follows:
 
@@ -50,15 +50,19 @@ Configure the application server to use PostgreSQL
 NOTE: https://github.com/kylinsoong/EJB/blob/master/docs/READEME.asciidoc has detailed steps for operation with PostgreSQL
 
 Build and Deploy the Quickstart
--------------------------
+-------------------------------
+
 * Make sure you have started the JBoss Server(full instance) with the PostgreSQL driver
+
 * Open a command line and navigate to the root directory of this quickstart.
+
 * Type this command to build and deploy the archive:
+
 ----
 mvn clean package
 ----
 
-4. This will generate `target/ejb-cmt.war`, deploy it to the running JBosss instance.
+* This will generate `target/cmt.war`, deploy it to the running JBosss instance.
 
 Access the application 
 ---------------------
@@ -70,5 +74,7 @@ You will be presented with a simple form for adding customers to a database.
 
 After a user is successfully added to the database, a message is produced containing the details of the user. An example MDB will dequeue this message and print the following contents:
 
-    Received Message: Created invoice for customer named:  Tom
+----
+Received Message: Created invoice for customer named:  kylin
+----
 
