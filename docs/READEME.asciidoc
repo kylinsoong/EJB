@@ -112,7 +112,7 @@ create user sa with password 'sa';
 
 * create a PostgreSQL database named `DEMO_DATABASENAME`, specifying the `sa` as the owner: 
 ----
-grant all privileges on database "DEMO_DATABASENAME" to sa;
+create database "DEMO_DATABASENAME" owner sa;
 ----
 
 * grant all privileges on the database by typing the following commands:
