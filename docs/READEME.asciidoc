@@ -11,7 +11,7 @@ link:ejb-security.asciidoc[EJB security demo entry]
 
 link:ejb-singleton.asciidoc[EJB singleton demo entry]
 
-
+link:ejb-mdb.asciidoc[EJB mdb demo entry]
 
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
 -------------------------------------------------

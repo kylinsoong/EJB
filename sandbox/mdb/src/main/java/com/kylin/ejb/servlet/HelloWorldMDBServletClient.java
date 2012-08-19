@@ -48,16 +48,16 @@ public class HelloWorldMDBServletClient extends HttpServlet {
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
 		Connection connection = null;
-		out.write("<h1>Example demonstrates the use of *JMS 1.1* and *EJB 3.1 Message-Driven Bean*</h1>");
+		out.write("<h2>Example demonstrates the use of JMS 1.1 and EJB 3.1 Message-Driven Bean</h2>");
 		try {
 			connection = connectionFactory.createConnection();
 			Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
 			MessageProducer messageProducer = session.createProducer(queue);
 			connection.start();
-			out.write("<h2>Following messages will be send to the queue:</h2>");
+			out.write("<h3>Following messages will be send to the queue:</h3>");
 			TextMessage message = session.createTextMessage();
 			for (int i = 0; i < MSG_COUNT; i++) {
-				message.setText("This is message " + (i + 1));
+				message.setText("This is hello world mdb message " + (i + 1));
 				messageProducer.send(message);
 				out.write("Message ("+i+"): " + message.getText() +"</br>");
 			}
