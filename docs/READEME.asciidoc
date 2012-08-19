@@ -90,3 +90,50 @@ postgres -D /var/lib/pgsql/data
 ----
 
 NOTE: This command will hang, just leave the terminal window open.
+
+4. Create a Database User
++++++++++++++++++++++++++
+
+* open a new terminal window and switch users to postgres:
+----
+su - postgres
+----
+
+* Run the psql tool:
+----
+psql
+----
+
+* Create the user `sa` with password `sa`:
+----
+create user sa with password 'sa';
+----
+
+* create a PostgreSQL database named `DEMO_DATABASENAME`, specifying the `sa` as the owner: 
+----
+grant all privileges on database "DEMO_DATABASENAME" to sa;
+----
+
+* grant all privileges on the database by typing the following commands:
+----
+grant all privileges on database "DEMO_DATABASENAME" to sa;
+----
+
+* exit the psql for entering the command:
+----
+\q
+----
+
+NOTE:  as noted above, replace `DEMO_DATABASENAME`, `sa` with the name provided in the particular demo):
+
+5. Start & Stop PostSQL Database as service
+
+* start
+----
+service postgresql start
+----
+
+* stop
+----
+service postgresql stop
+----
