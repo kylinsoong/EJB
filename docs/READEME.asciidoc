@@ -65,5 +65,28 @@ passwd postgres
 su - postgres
 ----
 
+3. Configure the database
++++++++++++++++++++++++++
 
+* In a command line, login as the postgres user, Initialize the Database - Enter the following commands to initialize the database:
+----
+initdb -D /var/lib/pgsql/data
+----
 
+* Modify the /var/lib/pgsql/data/pg_hba.conf file to set the authentication scheme to password for tcp connections. Modify the line following the IPv4 local connections: change trust to to password. The line should look like this:
+----
+host    all    all    127.0.0.1/32    password
+----
+
+* Modify the /var/lib/pgsql/data/postgresql.conf file to allow prepared transactions and reduce the maximum number of connections:
+----
+max_prepared_transactions = 10
+max_connections = 10
+----
+
+* Start the Database:
+----
+postgres -D /var/lib/pgsql/data
+----
+
+NOTE: This command will hang, just leave the terminal window open.
