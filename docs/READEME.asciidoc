@@ -13,6 +13,9 @@ link:ejb-singleton.asciidoc[EJB singleton demo entry]
 
 link:ejb-mdb.asciidoc[EJB mdb demo entry]
 
+link:ejb-cmt.asciidoc[EJB cmt demo entry]
+
+
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
 -------------------------------------------------
 * stateless session bean: *ejb:<appName>/<moduleName>/<distinctName>/<beanName>!<viewClassName>*
@@ -28,3 +31,39 @@ JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
 . *<beanName>* The name of the session been to be invoked.
 
 . *<viewClassName>* The fully qualified classname of the remote interface.  Must include the whole package name.
+
+
+
+Install and Configure the PostgreSQL Database
+----------------------------------------------
+
+1. Install PostgreSQL
++++++++++++++++++++++
+
+* Open a Terminal window and enter the following command:
+----
+yum install postgresql-server
+----
+
+* Use the following command check the installation result:
+----
+rpm -qa | grep postgres*
+----
+
+2. Set a password for the postgres user
++++++++++++++++++++++++++++++++++++++++
+
+* the installation creates a user named postgres, change the password of User postgres, we only need login as root user enter the following user:
+----
+passwd postgres
+----
+
+* enter <passwd> twice for setting the password
+
+* login as postgres by enter the command:
+----
+su - postgres
+----
+
+
+
