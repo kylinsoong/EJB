@@ -17,4 +17,13 @@
    <topic name="testTopic1">
       <entry name="/topic/testTopic11"/>
    </topic>
+   
+   <queue name="abc">
+      <entry name="ddd"/>
+   </queue>
+
+   <topic name="aaa">
+      <entry name="bbb"/>
+   </topic>
+   
 </configuration>

@@ -17,6 +17,9 @@ link:ejb-cmt.asciidoc[EJB cmt demo entry]
 
 link:ejb-bmt.asciidoc[EJB bmt demo entry]
 
+link:ejb-mdb-eap5.asciidoc[EJB mdb hornetQ demo entry]
+
+
 
 JBoss-as-7 & JBoss-eap-6 JNDI lookup name syntax:
 -------------------------------------------------

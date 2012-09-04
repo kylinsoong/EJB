@@ -39,7 +39,8 @@ mvn clean package
 ** QueueClient
 ** CaseTopicClient
 ** CaseQueueClient
-
+** UserQueueClient
+** UserTopicClient
 
 
 
