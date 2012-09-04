@@ -22,6 +22,7 @@
         <module>cmt</module>
 	<module>earTest</module>
 	<module>mdb</module>
+	<module>mdb-eap5</module>
 	<module>remote</module>
 	<module>security</module>
 	<module>singleton</module>

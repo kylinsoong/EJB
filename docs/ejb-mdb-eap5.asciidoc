@@ -1,0 +1,46 @@
+What is it?
+-----------
+
+* This example demonstrates MDB on eap 5, use HornetQ as JMS server. 
+
+* Use MDB listen on a topic, send message to this topic, if MDB receive the message, print the message. 
+
+* How to deploy topic/queue to JBoss.
+
+* @ActivationConfigProperty(propertyName = "destination", propertyValue = "topic/testTopic"), what's the real meaning of this `propertyValue`, destination name or destination JNDI name?
+
+System requirements
+-------------------
+
+All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.
+
+The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss AS 7. 
+
+
+Build, Deploy and Test 
+----------------------
+
+* We need start JBoss use full module, like this below:
+----
+JBOSS_HOME/bin/standalone.sh -c standalone-full.xml
+----
+
+* Make sure you have started the JBoss Server as described above.
+
+* Build project using maven
+----
+mvn clean package
+----
+
+* This will generate `target/helloworld-mdb.jar`, deploy it to the JBoss.
+
+* Test
+** TopicClient
+** QueueClient
+** CaseTopicClient
+** CaseQueueClient
+
+
+
+
+

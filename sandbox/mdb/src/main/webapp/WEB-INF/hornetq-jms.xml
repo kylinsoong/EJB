@@ -3,7 +3,7 @@
     <hornetq-server>
         <jms-destinations>
             <jms-queue name="HELLOWORLDMDBQueue">
-                <entry name="/queue/HELLOWORLDMDBQueue"/>
+                <entry name="/queue/HELLOWORLDMDBQueue1"/>
             </jms-queue>
         </jms-destinations>
     </hornetq-server>
