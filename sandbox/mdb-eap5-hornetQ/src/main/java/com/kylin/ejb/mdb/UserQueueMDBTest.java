@@ -8,7 +8,7 @@ import javax.jms.MessageListener;
 import org.apache.log4j.Logger;
 
 @MessageDriven(name = "UserQueueMDBTest", activationConfig = {
-		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
+		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "destination", propertyValue = "ddd"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class UserQueueMDBTest extends MDBTestBase implements MessageListener{

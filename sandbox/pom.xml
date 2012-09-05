@@ -23,6 +23,7 @@
 	<module>earTest</module>
 	<module>mdb</module>
 	<module>mdb-eap5</module>
+	<module>mdb-eap5-hornetQ</module>
 	<module>remote</module>
 	<module>security</module>
 	<module>singleton</module>

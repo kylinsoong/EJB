@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kylin.ejb</groupId>
-    <artifactId>mdb-eap5-jbossmessaging</artifactId>
+    <artifactId>mdb-eap5-hornetq</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>JBoss Messaging MDB test against eap 5</name>
+    <name>HornetQ MDB test against eap 5</name>
 
     <url>https://github.com/kylinsoong</url>
     <licenses>
