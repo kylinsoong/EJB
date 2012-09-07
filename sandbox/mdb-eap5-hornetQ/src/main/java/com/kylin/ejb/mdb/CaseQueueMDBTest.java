@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 @MessageDriven(name = "CaseQueueMDBTest", activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-		@ActivationConfigProperty(propertyName = "destination", propertyValue = "queue/testQueue1"),
+		@ActivationConfigProperty(propertyName = "destination", propertyValue = "testQueue1"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class CaseQueueMDBTest extends MDBTestBase implements MessageListener {
 

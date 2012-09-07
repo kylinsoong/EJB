@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 
 @MessageDriven(name = "CaseTopicMDBTest", activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
-		@ActivationConfigProperty(propertyName = "destination", propertyValue = "topic/testTopic1"),
+		@ActivationConfigProperty(propertyName = "destination", propertyValue = "testTopic1"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class CaseTopicMDBTest extends MDBTestBase implements MessageListener{
 
