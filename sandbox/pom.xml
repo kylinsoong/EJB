@@ -24,6 +24,7 @@
 	<module>mdb</module>
 	<module>mdb-eap5</module>
 	<module>mdb-eap5-hornetQ</module>
+	<module>mdb-eap6</module>
 	<module>remote</module>
 	<module>security</module>
 	<module>singleton</module>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messaging-deployment xmlns="urn:jboss:messaging-deployment:1.0">
+    <hornetq-server>
+        <jms-destinations>
+            <jms-queue name="testQueue">
+                <entry name="/queue/testQueue"/>
+            </jms-queue>
+            <jms-queue name="testQueue1">
+                <entry name="/queue/testQueue11"/>
+            </jms-queue>
+            <jms-queue name="abc">
+                <entry name="ddd"/>
+            </jms-queue>
+            <jms-topic name="testTopic">
+                <entry name="/topic/testTopic"/>
+            </jms-topic>
+            <jms-topic name="testTopic1">
+                <entry name="/topic/testTopic11"/>
+            </jms-topic>
+            <jms-topic name="aaa">
+                <entry name="bbb"/>
+            </jms-topic>
+        </jms-destinations>
+    </hornetq-server>
+</messaging-deployment>
