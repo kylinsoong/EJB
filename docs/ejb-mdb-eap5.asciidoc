@@ -9,6 +9,10 @@ What is it?
 
 * @ActivationConfigProperty(propertyName = "destination", propertyValue = "topic/testTopic"), what's the real meaning of this `propertyValue`, destination name or destination JNDI name?
 
+Useful Link:
+------------
+https://issues.jboss.org/browse/HORNETQ-1025
+
 System requirements
 -------------------
 
@@ -19,13 +23,9 @@ The application this project produces is designed to be run on JBoss Enterprise 
 
 Build, Deploy and Test 
 ----------------------
+* Make sure you have install hornetQ to JBoss eap version 5.x
 
-* We need start JBoss use full module, like this below:
-----
-JBOSS_HOME/bin/standalone.sh -c standalone-full.xml
-----
-
-* Make sure you have started the JBoss Server as described above.
+* Make sure you have started the JBoss eap version 5.x  
 
 * Build project using maven
 ----

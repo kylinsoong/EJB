@@ -7,7 +7,7 @@
     <artifactId>helloworld-mdb</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>Helloworld Message-Driven Bean with Servlet 3.0 as client</name>
+    <name>Helloworld MDB with Servlet 3.0 as client</name>
 
     <url>https://github.com/kylinsoong</url>
     <licenses>

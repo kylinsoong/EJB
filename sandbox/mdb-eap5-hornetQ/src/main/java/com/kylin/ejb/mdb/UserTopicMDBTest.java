@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
 		@ActivationConfigProperty(propertyName = "destination", propertyValue = "bbb"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
+//@org.jboss.ejb3.annotation.Depends("org.hornetq:module=JMS,name=\"aaa\",type=Topic")
 public class UserTopicMDBTest extends MDBTestBase implements MessageListener{
 
 	private final static Logger logger = Logger.getLogger(UserTopicMDBTest.class);
