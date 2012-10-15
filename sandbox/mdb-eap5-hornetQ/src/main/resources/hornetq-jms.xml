@@ -26,4 +26,8 @@
       <entry name="bbb"/>
    </topic>
    
+   <topic name="aaaa">
+      <entry name="/topic/bbbb"/>
+   </topic>
+   
 </configuration>
