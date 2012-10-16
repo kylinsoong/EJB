@@ -26,7 +26,7 @@ public class UserTopicClient_V2 extends ClientBase {
 			Context context = getContext();
 			ConnectionFactory factory = (ConnectionFactory) context.lookup("/ConnectionFactory");
 			
-			Topic topic = (Topic) context.lookup("/topic/testTopic11");
+			Topic topic = (Topic) context.lookup("/topic/bbbb");
 			
 			Connection connection = factory.createConnection();
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -36,7 +36,7 @@ public class UserTopicClient_V2 extends ClientBase {
 			textMsg = session.createTextMessage("Red Hat Global Support Service");
 			producer.send(textMsg);
 			
-			System.out.println(UserTopicClient.class.getSimpleName() + " DONE");
+			System.out.println(UserTopicClient_V2.class.getSimpleName() + " DONE");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
