@@ -13,6 +13,10 @@ import org.apache.log4j.Logger;
 		@ActivationConfigProperty(propertyName = "destination", propertyValue = "topic/testTopic"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class TopicMDBTest extends MDBTestBase implements MessageListener{
+	
+	public TopicMDBTest () {
+		TopicMDBTest.logger.info("TopicMDBTest constructed");
+	}
 
 	private final static Logger logger = Logger.getLogger(TopicMDBTest.class);
 
