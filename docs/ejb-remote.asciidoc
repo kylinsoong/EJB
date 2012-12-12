@@ -4,18 +4,30 @@ ejb-remote: Remote EJB Client Example
 
 What is it?
 -----------
+* Demo for accessing an EJB from a remote Java client application. 
+* Demo for using  *EJB 3.1*, *JNDI* in *JBoss Enterprise Application Platform 6* or *JBoss AS 7*.
+* Demo for deploying EJB service via jar archive
 
-This example shows how to access an EJB from a remote Java client application. It demonstrates the use of *EJB 3.1* and *JNDI* in *JBoss Enterprise Application Platform 6* or *JBoss AS 7*.
+Two components
+^^^^^^^^^^^^^^
 
-There are two components to this example: 
+1. server side component:
++++++++++++++++++++++++++
 
-1. A server side component:
+The server component is comprised of stateful EJB and stateless EJB. It provides both an EJB JAR that is deployed to the server and a JAR file containing the remote business interfaces required by the remote client application.
 
-The server component is comprised of a stateful EJB and a stateless EJB. It provides both an EJB JAR that is deployed to the server and a JAR file containing the remote business interfaces required by the remote client application.
+2. client side component:
++++++++++++++++++++++++++
 
-2. A remote client application that accesses the server component. 
+The remote client application depends on the remote business interfaces from the server component. Client side component run outside of JBoss, play a role as remote client. This application looks up the stateless and stateful beans via JNDI and invoke the method EJB service supplyed.
 
-The remote client application depends on the remote business interfaces from the server component. This application looks up the stateless and stateful beans via JNDI and invokes a number of methods on them.
+*Exist Client Application:*
+
+|=========================================================================================
+|*Class Name*                                            |*Remote Service Interface*                          |*Description*
+|com.kylin.ejb.remote.client.CalculatorServiceClient     |com.kylin.ejb.remote.stateless.CalculatorService    | invoke CalculatorService's method to execute add or subtract, 2 interger be passed
+|com.kylin.ejb.remote.client.CounterServiceClient        |com.kylin.ejb.remote.stateful.CounterService        | CounterService is stateful, hole a interger count, any increase or decaease will be matain by container
+|=========================================================================================
 
 
 System requirements
