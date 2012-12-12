@@ -21,12 +21,15 @@ The server component is comprised of stateful EJB and stateless EJB. It provides
 
 The remote client application depends on the remote business interfaces from the server component. Client side component run outside of JBoss, play a role as remote client. This application looks up the stateless and stateful beans via JNDI and invoke the method EJB service supplyed.
 
+NOTE: `jboss-client.jar` should be add to client class path manually
+
 *Exist Client Application:*
 
 |=========================================================================================
-|*Class Name*                                            |*Remote Service Interface*                          |*Description*
+|*Class Name*                |*Remote Service Interface*                          |*Description*
 |CalculatorServiceClient     |com.kylin.ejb.remote.stateless.CalculatorService    | invoke CalculatorService's method to execute add or subtract, 2 interger be passed
 |CounterServiceClient        |com.kylin.ejb.remote.stateful.CounterService        | CounterService is stateful, hole a interger count, any increase or decaease will be matain by container
+|InterInvokeServiceClient    |com.kylin.ejb.interInvoke.InterInvokeService        | InterInvokeService supply method to invoke EJB Local Service
 |=========================================================================================
 
 
