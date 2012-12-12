@@ -25,8 +25,8 @@ The remote client application depends on the remote business interfaces from the
 
 |=========================================================================================
 |*Class Name*                                            |*Remote Service Interface*                          |*Description*
-|com.kylin.ejb.remote.client.CalculatorServiceClient     |com.kylin.ejb.remote.stateless.CalculatorService    | invoke CalculatorService's method to execute add or subtract, 2 interger be passed
-|com.kylin.ejb.remote.client.CounterServiceClient        |com.kylin.ejb.remote.stateful.CounterService        | CounterService is stateful, hole a interger count, any increase or decaease will be matain by container
+|CalculatorServiceClient     |com.kylin.ejb.remote.stateless.CalculatorService    | invoke CalculatorService's method to execute add or subtract, 2 interger be passed
+|CounterServiceClient        |com.kylin.ejb.remote.stateful.CounterService        | CounterService is stateful, hole a interger count, any increase or decaease will be matain by container
 |=========================================================================================
 
 
