@@ -10,19 +10,30 @@ public class CounterServiceClient extends ClientBase {
 		
 		CounterService counter = (CounterService) getContext().lookup(jndiName);
 		
-		prompt("Original counter: " + counter.getCount());
+		prompt("Original, count = " + counter.getCount());
+		stop(1000L);
 		
 		counter.increment();
-		
-		prompt("counter: " + counter.getCount());
+		prompt("Increase, count = " + counter.getCount());
+		stop(1000L);
 		
 		counter.increment();
+		prompt("Increase, count = " + counter.getCount());
+		stop(1000L);
 		
-		prompt("counter: " + counter.getCount());
+		counter.increment();
+		prompt("Increase, count = " + counter.getCount());
+		stop(1000L);
 		
 		counter.decrement();
+		prompt("Decrease, count = " + counter.getCount());
+		stop(1000L);
 		
-		prompt("Final counter: " + counter.getCount());
+		counter.decrement();
+		prompt("Decrease, count = " + counter.getCount());
+		stop(1000L);
+		
+		prompt("Final, count = " + counter.getCount());
 	}
 
 	public static void main(String[] args) throws Exception {

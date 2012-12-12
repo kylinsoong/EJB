@@ -9,7 +9,7 @@ import javax.ejb.Stateful;
 @Local(CounterServiceLocal.class)
 public class CounterSession implements CounterServiceLocal {
 
-    private int count = 0;
+    private int count = 100;
 
     public void increment() {
         this.count++;
