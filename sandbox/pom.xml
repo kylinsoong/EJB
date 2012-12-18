@@ -20,7 +20,7 @@
     <modules>
         <module>bmt</module>
         <module>cmt</module>
-	<module>earTest</module>
+	<module>ear</module>
 	<module>mdb</module>
 	<module>mdb-eap5</module>
 	<module>mdb-eap5-hornetQ</module>
