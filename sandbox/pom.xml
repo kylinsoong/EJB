@@ -29,6 +29,7 @@
 	<module>security</module>
 	<module>singleton</module>
 	<module>warTest</module>
+	<module>ejb2</module>
     </modules>
 
 </project>

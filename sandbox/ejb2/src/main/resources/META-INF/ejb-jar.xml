@@ -1,0 +1,22 @@
+<?xml version="1.0"?>    
+<!DOCTYPE ejb-jar PUBLIC '-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN' 'http://java.sun.com/dtd/ejb-jar_2_0.dtd'>  
+<ejb-jar>  
+    <enterprise-beans>  
+        <session>  
+            <ejb-name>HelloWorld</ejb-name>  
+            <home>com.kylin.ejb.helloworld.HelloWorldHome</home>  
+            <remote>com.kylin.ejb.helloworld.HelloWorld</remote>  
+            <ejb-class>com.kylin.ejb.helloworld.HelloWorldBean</ejb-class>  
+            <session-type>Stateless</session-type>  
+            <transaction-type>Bean</transaction-type>  
+        </session>  
+        <session>  
+            <ejb-name>BootUp</ejb-name>  
+            <home>com.kylin.ejb.bootup.BootUpHome</home>  
+            <remote>com.kylin.ejb.bootup.BootUp</remote>  
+            <ejb-class>com.kylin.ejb.bootup.BootUpBean</ejb-class>  
+            <session-type>Stateless</session-type>  
+            <transaction-type>Bean</transaction-type>  
+        </session> 
+    </enterprise-beans>  
+</ejb-jar> 

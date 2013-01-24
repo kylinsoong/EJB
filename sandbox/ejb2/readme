@@ -1,0 +1,4 @@
+1. What's this?
+    This contain a list Legacy EJB 2 Demo
+2.  How to run?
+    java -cp /home/kylin/work/eap/jboss-eap-5.1/jboss-as/client/*:ejb-ejb2.jar org.jboss.ejb.client.ClientMain -b 127.0.0.1 -p 1099
