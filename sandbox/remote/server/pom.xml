@@ -4,7 +4,7 @@
    <modelVersion>4.0.0</modelVersion>
  
    <groupId>com.kylin.ejb</groupId>
-   <artifactId>remote-server</artifactId>
+   <artifactId>ejb-remote-server</artifactId>
    <version>1.0</version>
    <packaging>ejb</packaging>
    <name>Server side of remote EJB</name>
@@ -58,6 +58,7 @@
        <groupId>log4j</groupId>
        <artifactId>log4j</artifactId>
        <version>1.2.16</version>
+       <scope>provided</scope>
     </dependency>
    </dependencies>
 

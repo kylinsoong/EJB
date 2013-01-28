@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kylin.ejb</groupId>
-    <artifactId>remote-parent</artifactId>
+    <artifactId>ejb-remote-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>Parent for remote EJB and Java client</name>

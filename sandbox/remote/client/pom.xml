@@ -4,7 +4,7 @@
    <modelVersion>4.0.0</modelVersion>
 
    <groupId>com.kylin.ejb</groupId>
-   <artifactId>remote-client</artifactId>
+   <artifactId>ejb-remote-client</artifactId>
    <version>1.0</version>
    <packaging>jar</packaging>
    <name>EJB Remote Client</name>
