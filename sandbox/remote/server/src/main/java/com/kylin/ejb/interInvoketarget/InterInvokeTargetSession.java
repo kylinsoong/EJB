@@ -1,4 +1,4 @@
-package com.kylin.ejb.interInvoke;
+package com.kylin.ejb.interInvoketarget;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

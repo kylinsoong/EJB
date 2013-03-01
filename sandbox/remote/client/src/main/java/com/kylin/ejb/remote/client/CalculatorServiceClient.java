@@ -7,7 +7,7 @@ public class CalculatorServiceClient extends ClientBase{
 
 	public void test() throws Exception {
 		
-		String jndiName = "ejb:/remote-server-1.0/CalculatorSession!" + CalculatorService.class.getName() ;
+		String jndiName = "ejb:/ejb-remote-server/CalculatorSession!" + CalculatorService.class.getName() ;
 		
 		CalculatorService caculator = (CalculatorService) getContext().lookup(jndiName);
 		

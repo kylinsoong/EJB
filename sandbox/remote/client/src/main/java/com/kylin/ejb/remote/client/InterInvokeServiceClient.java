@@ -7,7 +7,7 @@ public class InterInvokeServiceClient extends ClientBase {
 
 	public void test() throws Exception {
 
-		String jndiName = "ejb:/remote-server-1.0/InterInvokeSession!" + InterInvokeService.class.getName() ;
+		String jndiName = "ejb:/ejb-remote-server/InterInvokeSession!" + InterInvokeService.class.getName() ;
 		InterInvokeService interInvokeService = (InterInvokeService) getContext().lookup(jndiName);
 		prompt("Invoke Remote Internal Invoke Service");
 		interInvokeService.invoke();
