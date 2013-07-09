@@ -1,0 +1,86 @@
+1. 编译invocation项目
+
+2. EJB服务端JBoss配置
+   1）添加一个Application User，如【1】.注意，我们创建用户名为ejb，密码为dGVzdA==(test加密后)
+   2）部署ejb-invocation-service.jar到EJB服务端JBoss
+   3）启动EJB服务端JBoss，如下：
+     ---
+     ./standalone.sh -Djboss.node.name=node1
+     ---
+     注意，您需要指定JBoss节点名
+
+3. EJB客户端JBoss配置
+   1）创建一个security-realm，具体编辑standalone.xml <security-realms>部分，添加ejb-security-realm，添加完成配置文件如下：
+     ---
+     <security-realms>
+            ...
+            <security-realm name="ejb-security-realm">
+                <server-identities>
+                    <secret value="dGVzdA=="/>
+                </server-identities>
+            </security-realm>
+        </security-realms>
+     ---
+   2）创建一个outbound-socket-binding，具体编辑standalone.xml <socket-binding-group 部分，添加outbound-socket-binding remote-ejb，添加完成配置文件如下：
+     ---
+     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+        ...
+        <outbound-socket-binding name="remote-ejb">
+            <remote-destination host="localhost" port="4447"/>
+        </outbound-socket-binding>
+     </socket-binding-group>
+     ---
+   3） 创建一个remote-outbound-connection，具体编辑standalone.xml urn:jboss:domain:remoting:1.1 部分，添加remote-outbound-connection，添加完成后该部分配置文件如下：
+     ---
+     <subsystem xmlns="urn:jboss:domain:remoting:1.1">
+            <connector name="remoting-connector" socket-binding="remoting" security-realm="ApplicationRealm"/>
+                <outbound-connections>
+                <remote-outbound-connection name="remote-ejb-connection" outbound-socket-binding-ref="remote-ejb" security-realm="ejb-security-realm" username="ejb">
+                    <properties>
+                        <property name="SASL_POLICY_NOANONYMOUS" value="false"/>
+                        <property name="SSL_ENABLED" value="false"/>
+                    </properties>
+                </remote-outbound-connection>
+            </outbound-connections>
+        </subsystem>
+     ---
+   4）部署ejb-invocation-client-server.war到EJB客户端JBoss
+   5）启动EJB客户端JBoss，如下：
+     ---
+     ./standalone.sh -Djboss.socket.binding.port-offset=100
+     ---
+    6）测试，访问http://localhost:8180/ejb-invocation-client-server，在出现界面中输入任何字符串，店家Greet按钮，返回类似“Hello ***, have a pleasant day!”，则证明调运成功。
+
+说明：1. 以上步骤参照【2】完成，您也可参照【2】.
+     2. 以上配置中我是通过直接修改配置文件完成配置，但是我们不建议直接这样做，推荐使用JBoss提供的管理界面或CLI进行配置，如【2】中使用CLI
+     3. 以上我是在通一台机器上使用localhost和端口偏移来模拟两台JBoss
+
+
+【1】add application user
+---
+[kylin@localhost bin]$ ./add-user.sh 
+
+What type of user do you wish to add? 
+ a) Management User (mgmt-users.properties) 
+ b) Application User (application-users.properties)
+(a): b
+
+Enter the details of the new user to add.
+Realm (ApplicationRealm) : 
+Username : ejb
+Password : 
+Re-enter Password : 
+What roles do you want this user to belong to? (Please enter a comma separated list, or leave blank for none)[  ]: 
+About to add user 'ejb' for realm 'ApplicationRealm'
+Is this correct yes/no? yes
+Added user 'ejb' to file '/home/kylin/work/eap/901142/jboss-eap-6.0-server/standalone/configuration/application-users.properties'
+Added user 'ejb' to file '/home/kylin/work/eap/901142/jboss-eap-6.0-server/domain/configuration/application-users.properties'
+Added user 'ejb' with roles  to file '/home/kylin/work/eap/901142/jboss-eap-6.0-server/standalone/configuration/application-roles.properties'
+Added user 'ejb' with roles  to file '/home/kylin/work/eap/901142/jboss-eap-6.0-server/domain/configuration/application-roles.properties'
+Is this new user going to be used for one AS process to connect to another AS process? 
+e.g. for a slave host controller connecting to the master or for a Remoting connection for server to server EJB calls.
+yes/no? yes
+To represent the user add the following to the server-identities definition <secret value="dGVzdA==" />
+---
+
+【2】https://docs.jboss.org/author/display/AS71/EJB+invocations+from+a+remote+server+instance

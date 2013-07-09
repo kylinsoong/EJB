@@ -69,6 +69,24 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
+	    <plugin>
+    <groupId>org.jboss.as.plugins</groupId>
+    <artifactId>jboss-as-maven-plugin</artifactId>
+    <version>7.3.Final</version>
+    <configuration>
+         <hostname>127.0.0.1</hostname>
+         <port>9999</port>
+         <filename>ear-main-1.0.ear</filename>
+    </configuration>
+    <executions>
+       <execution>
+          <phase>install</phase>
+              <goals>
+                 <goal>deploy</goal>
+              </goals>
+       </execution>
+    </executions>
+</plugin>
         </plugins>
     </build>
 </project>
