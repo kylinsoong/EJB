@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kylin.ejb</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>ejb-timer-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>Parent for remote EJB and Java client</name>
+    <name>Parent for timer EJB and Java client</name>
 
     <licenses>
         <license>
@@ -17,20 +17,13 @@
         </license>
     </licenses>
 
+    <!-- This quickstart consists of a server side component and a client that accesses
+	 the server side component. Each component has its own self contain pom. However,
+	 you can add these modules here to keep things modular.
+	 -->
     <modules>
-        <module>bmt</module>
-        <module>cmt</module>
-	<module>ear</module>
-	<module>mdb</module>
-	<module>mdb-eap5</module>
-	<module>mdb-eap5-hornetQ</module>
-	<module>mdb-eap6</module>
-	<module>remote</module>
-	<module>security</module>
-	<module>singleton</module>
-	<module>warTest</module>
-	<module>ejb2</module>
-	<module>timer</module>
+        <module>server</module>
+        <module>client</module>
     </modules>
 
 </project>

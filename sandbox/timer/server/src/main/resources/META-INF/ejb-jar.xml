@@ -1,0 +1,52 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+	version="3.0">
+
+	<enterprise-beans>
+
+		<session>
+			<!-- This is the ejb-name which should match up to what is in jboss.xml 
+				if you need to set settings in the jboss.xml -->
+			<ejb-name>TimerSampleBean1</ejb-name>
+
+			<!-- business-local is used for the local interface when using EJB3. local 
+				is not used because it is ejb2 and would expect a Local -->
+			<business-local>org.jboss.ejb.timer.TimerSampleLocal</business-local>
+
+			<!-- business-local is used for the remote interface when using EJB3. 
+				remote is not used because it is ejb2 and would expect a Remote Home interface 
+				also -->
+			<business-remote>org.jboss.ejb.timer.TimerSample</business-remote>
+
+			<!-- this is the EJB Bean (@Stateless) -->
+			<ejb-class>org.jboss.ejb.timer.TimerSampleBean</ejb-class>
+
+			<session-type>Stateless</session-type>
+			<transaction-type>Container</transaction-type>
+		</session>
+		
+		<session>
+			<!-- This is the ejb-name which should match up to what is in jboss.xml 
+				if you need to set settings in the jboss.xml -->
+			<ejb-name>TimerSampleBean2</ejb-name>
+
+			<!-- business-local is used for the local interface when using EJB3. local 
+				is not used because it is ejb2 and would expect a Local -->
+			<business-local>org.jboss.ejb.timer.TimerSampleLocal</business-local>
+
+			<!-- business-local is used for the remote interface when using EJB3. 
+				remote is not used because it is ejb2 and would expect a Remote Home interface 
+				also -->
+			<business-remote>org.jboss.ejb.timer.TimerSample</business-remote>
+
+			<!-- this is the EJB Bean (@Stateless) -->
+			<ejb-class>org.jboss.ejb.timer.TimerSampleBean</ejb-class>
+
+			<session-type>Stateless</session-type>
+			<transaction-type>Container</transaction-type>
+		</session>
+
+	</enterprise-beans>
+
+</ejb-jar>
